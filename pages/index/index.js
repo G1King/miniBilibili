@@ -5,7 +5,9 @@ Page({
    */
   data: {
     navList:[],
-    clickCurrentNav:0
+    clickCurrentNav:0,
+    swiperList:null,
+    videosList:null
   },
 
   /**
@@ -13,6 +15,8 @@ Page({
    */
   onLoad: function (options) {
     this.getNavList();
+    this.fetchCal();
+    this.fetchVideoList();
   },
 
   /**
@@ -37,6 +41,34 @@ Page({
   clickItem(e){
     this.setData({
       clickCurrentNav:e.target.dataset.index
+    })
+  },
+  /**
+   * 请求轮播图
+   */
+  fetchCal(){
+    wx.request({
+  url:'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/swiperList',
+  success:(r)=>{
+    console.log(r.data.data);
+    this.setData({
+      swiperList: r.data.data.swiperList
+    })
+  }
+    })
+  },
+  /**
+   * 请求视频列表
+   */
+  fetchVideoList(){
+    wx.request({
+      url:'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videosList',
+      success:(r)=>{
+        console.log(r.data.data);
+        this.setData({
+           videosList:r.data.data.videosList
+        })
+      }
     })
   },
   /**

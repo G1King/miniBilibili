@@ -1,12 +1,49 @@
 <view class="main">
-<!--头部 -->
-<MyTitle></MyTitle>
-<!-- 滑动导航 -->
-<view class="nav_wrap">
-<scroll-view class="nav" scroll-x>
-<view bindtap='clickItem' wx:for="{{navList}}" wx:key="{{index}}" class="nav_item {{clickCurrentNav === index ? 'active' : ''}}" data-index="{{index}}">
-{{ item.text }}
-</view>
-</scroll-view>
-</view>
+  <!--头部 -->
+  <MyTitle></MyTitle>
+  <!-- 滑动导航 -->
+  <view class="nav_wrap">
+    <scroll-view class="nav" scroll-x>
+      <view bindtap='clickItem' wx:for="{{navList}}" wx:key="{{index}}" class="nav_item {{clickCurrentNav === index ? 'active' : ''}}" data-index="{{index}}">
+        {{ item.text }}
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="slides">
+    <swiper autoplay circular interval="3000">
+      <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
+        <navigator>
+          <image src="{{item.imgSrc}}" mode="widthFix"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 视频列表 -->
+  <view class="video_wrap">
+ <navigator url="../detail/detail?id={{item.id}}" wx:for="{{videosList}}" wx:key="{{index}}" class="video_item">
+ <!-- 图片容器 评论  浏览量-->
+ <view class="video-image-wrap">
+ <image src="{{item.imgSrc}}" mode="widthFix" class="video-image"></image>
+ <view class="video-info">
+   <view class="play_count_wrap">
+            <!-- 图标 -->
+            <text class="fa fa-play-circle-o"></text>
+            <!-- 数值 -->
+            <text class="play_count">{{item.playCount}}</text>
+          </view>
+          <!-- 评论量 -->
+          <view class="comment_count_row">
+            <!-- 图标 -->
+            <text class="fa fa-commenting-o"></text>
+            <!-- 数值 -->
+            <text class="comment_count">{{item.commentCount}}</text>
+        </view>
+ </view>
+
+ </view>
+ <!-- 标题 -->
+ <text class="video-desc">{{item.desc}}</text>
+ </navigator>
+  </view>
 </view>
