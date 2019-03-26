@@ -1,0 +1,12 @@
+<view class="main">
+<!--头部 -->
+<MyTitle></MyTitle>
+<!-- 滑动导航 -->
+<view class="nav_wrap">
+<scroll-view class="nav" scroll-x>
+<view bindtap='clickItem' wx:for="{{navList}}" wx:key="{{index}}" class="nav_item {{clickCurrentNav === index ? 'active' : ''}}" data-index="{{index}}">
+{{ item.text }}
+</view>
+</scroll-view>
+</view>
+</view>
