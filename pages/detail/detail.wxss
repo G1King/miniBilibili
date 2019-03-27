@@ -1,1 +1,115 @@
 /* pages/detail/detail.wxss */
+.main{
+   padding: 10rpx;
+  color: #666;
+}
+.vieo-info{
+  margin-top: 10rpx;
+}
+.vieo-info video {
+  width: 100%;
+}
+.video-title{
+    font-size: 35rpx;
+}
+.vieo-info .video-bottom{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.video-author{
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  color: #000;
+}
+
+.font{
+  margin-right: 10rpx;
+color: #666;
+font-size: 30rpx;
+}
+.recommend-video{
+  margin-top: 10rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+.recommend-video .recommend-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.recommend-item{
+  margin-top: 25rpx;
+}
+.recommend-item .re-image-wrap{
+  width: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.re-image-wrap img{
+  width: 90%;
+  border-radius: 15rpx;
+}
+.re-video-info {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  margin-left: 20rpx;
+  
+  font-size: 28rpx;
+  color: #666;
+}
+.re-video-info .re-video-title{
+  color: #e06f93;
+  font-size: 30rpx;
+}
+.comment-wrap{
+  margin-top: 20rpx;
+}
+.comment-wrap .comment-wrap-descp{
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+.comment-wrap .comment-box{
+
+  display: flex;
+  flex-direction: row;
+   margin-bottom: 10rpx;
+  padding: 10rpx;
+  border-bottom: 2rpx solid #e4e4e4;
+}
+.comment-box image{
+/* flex: 1; */
+ width: 50rpx;
+ height: 50rpx;
+  border-radius: 50%;
+}
+.comment-box .comment-info{
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  font-size: 29rpx;
+  margin-left: 15rpx;
+}
+.comment-info .comment-name,.comment-date{
+  color: #666;
+  
+}
+.comment-info .info-wrap{
+position: relative;
+margin-bottom: 15rpx;
+
+}
+.info-wrap .comment-date{
+  position: absolute;
+  right: 10rpx;
+}
+
+.comment-info .comment-content-wrap{
+display: flex;
+flex-direction: row;
+align-items: center;
+
+}

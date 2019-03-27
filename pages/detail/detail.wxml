@@ -1,2 +1,47 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="mian">
+  <!-- 公共头部 -->
+  <MyTitle></MyTitle>
+
+  <!-- 视频详情 -->
+  <view class="vieo-info">
+    <video src="{{videoInfo.videoSrc}}" controls show-mute-btn="true" title="{{videoInfo.videoTitle}}">
+    </video>
+    <text class="video-title">{{videoInfo.videoTitle}}</text>
+    <view class="video-bottom">
+      <text class="video-author">{{videoInfo.author}}</text>
+      <text class="video-playCount font">{{videoInfo.playCount}}次观看</text>
+      <text class="video-commentCount font">{{videoInfo.commentCount}}弹幕</text>
+      <text class="video-date font">{{videoInfo.date}}</text>
+    </view>
+  </view>
+  <!-- 推荐视频 -->
+<view class="recommend-video">
+ <navigator wx:for="{{othersList}}" wx:key="{{index}}" class="recommend-item">
+   <view class="re-image-wrap">
+   <image src="{{item.imgSrc}}" mode=
+   "widthFix"></image>
+   </view>
+   <view class="re-video-info">
+   <text class="re-video-title">{{item.title}}</text>
+   <text class="re-video-other" decode>{{item.playMsg}}次观看&nbsp;{{item.commentCount}}弹幕</text>
+   </view>
+ 
+ </navigator>
+</view>
+  <!-- 评论 -->
+  <view class="comment-wrap">
+   <text class="comment-wrap-descp">评论{{commentData.commentTotalCount}}</text>
+   <view class="comment-box" wx:for="{{commentData.commentList}}" wx:key="{{index}}">
+   <image mode='widthFix' src="{{item.userIconSrc}}"></image>
+   <view class="comment-info">
+   <view class="info-wrap">
+   <text class="comment-name">{{item.username}}</text>
+   <text class="comment-date">{{item.commentDate}}</text>
+   </view>
+   <view class="comment-content-wrap">
+   <text class="comment-content">{{item.commentInfo}}</text>
+   </view>
+   </view>
+   </view>
+  </view>
+</view>
